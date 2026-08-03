@@ -1,4 +1,4 @@
 # Sivic
 
-CSE 1200 Project
+**CSE 2100 Project** \
 A smart public complant system prototype app.
