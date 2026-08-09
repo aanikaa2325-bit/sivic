@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:sivic/screens/login_page.dart';
+import 'package:sivic/screens/terms_of_use.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Sivic());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Sivic extends StatelessWidget {
+  const Sivic({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Sivic',
       theme: ThemeData(
         fontFamily: 'InterDisplay',
-      );
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('images/login_bg.png'),
-                fit: BoxFit.cover,
-            ),
-          ),
+        appBarTheme: const AppBarTheme(
+          surfaceTintColor: Color(0xFFC0F686),
         ),
       ),
+      home: const LoginPage(),
     );
   }
 }
