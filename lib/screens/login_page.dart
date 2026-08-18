@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 SizedBox(width: 12),
                                 Image(image:
-                                    AssetImage('assets/icons/right_arrow.png'),
+                                      AssetImage('assets/icons/right_arrow.png'),
                                     height: 20,
                                     width: 20,
                                 ),

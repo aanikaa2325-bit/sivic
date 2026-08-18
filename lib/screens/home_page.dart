@@ -419,6 +419,7 @@ class _HomePageState extends State<HomePage> {
                   progressStatus: 'Under review',
                   imagePath: 'assets/images/issue_image_2.png',
                 ),
+                SizedBox(height: 16),
               ],
             ),
           )

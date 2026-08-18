@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/widgets/selection.dart';
 
 class AddComplaint extends StatefulWidget {
@@ -188,7 +190,124 @@ class _AddComplaintState extends State<AddComplaint> {
                       border: const OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 80),
+                  SizedBox(height: 24),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: Text(
+                      'Complaint title',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF333733),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  DottedBorder(
+                    options: const RoundedRectDottedBorderOptions(
+                      color: Color(0xFFDFE6DF),
+                      strokeWidth: 2,
+                      dashPattern: [8, 8],
+                      radius: Radius.circular(16), // Required for RoundedRectDottedBorderOptions
+                    ),
+                    child: Container(
+                      height: 128,
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image(image: AssetImage('assets/icons/camera.png'), height: 20, width: 20),
+                          Text('Upload photo', style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF333733),
+                            ),
+                          ),
+                          Text('JPEG on PNG up to 50 MB', style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF848D84),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xFF5FBF0),
+                          border: Border.all(
+                            color: Color(0xFFC4E0A6),
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 18, left: 16, right: 16, bottom: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Image (image: AssetImage('assets/icons/info.png'), height: 20, width: 20,),
+                                  SizedBox(width: 8),
+                                  Text('Automatic Fiscal Tracking', style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xFF333733),
+                                      height: 1.2,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 8),
+                              Text('Once reported, this ticket links to our live civic ledger. Citizens can monitor approved allocations and exact expenditure reports.',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF848D84),
+                                  ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      SizedBox(
+                        height: 56,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF1C1F1C),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: Center(
+                              child: Text('Create account',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 28),
                 ],
               ),
             ],
