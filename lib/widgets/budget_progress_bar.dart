@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BudgetProgressBar extends StatelessWidget {
-  // Pass in a whole number between 0 and 100
   final int percentage;
 
   const BudgetProgressBar({

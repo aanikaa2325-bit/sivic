@@ -8,7 +8,6 @@ class Selection extends StatefulWidget {
 }
 
 class _SelectionState extends State<Selection> {
-  // Keeps track of which container is selected
   int selectedIndex = 0;
 
   Widget complaintContainer(
