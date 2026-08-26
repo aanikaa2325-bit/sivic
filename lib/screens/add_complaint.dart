@@ -239,7 +239,7 @@ class _AddComplaintState extends State<AddComplaint> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Color(0xFF5FBF0),
+                          color: Color(0xFFF5FBF0),
                           border: Border.all(
                             color: Color(0xFFC4E0A6),
                           ),

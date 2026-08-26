@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/navigation_menu.dart';
 import 'package:sivic/screens/add_complaint.dart';
+import 'package:sivic/screens/complaint_page.dart';
 import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/screens/login_page.dart';
@@ -48,7 +49,14 @@ class Sivic extends StatelessWidget {
           ),
         )
       ),
-      home: Feed(),
+      home: ComplaintPage(
+        data: AssetData(
+          title: "Broken Street Lamp",
+          location: "Road #137, Block B, Gulshan-1",
+          imagePath: "assets/images/complaint_image_1.png",
+          category: CategoryType.infrastructure,
+        ),
+      ),
     );
   }
 }
