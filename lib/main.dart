@@ -49,14 +49,7 @@ class Sivic extends StatelessWidget {
           ),
         )
       ),
-      home: ComplaintPage(
-        data: AssetData(
-          title: "Broken Street Lamp",
-          location: "Road #137, Block B, Gulshan-1",
-          imagePath: "assets/images/complaint_image_1.png",
-          category: CategoryType.infrastructure,
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }

@@ -12,7 +12,7 @@ class AssetData {
   final String imagePath;
   final CategoryType category;
 
-  AssetData({
+  const AssetData({
     required this.title,
     required this.location,
     required this.imagePath,
