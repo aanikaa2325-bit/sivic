@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sivic/screens/budget.dart';
 import 'package:sivic/navigation_menu.dart';
 import 'package:sivic/screens/add_complaint.dart';
 import 'package:sivic/screens/complaint_page.dart';
@@ -49,7 +50,7 @@ class Sivic extends StatelessWidget {
           ),
         )
       ),
-      home: HomePage(),
+      home: Budget(),
     );
   }
 }
