@@ -8,13 +8,13 @@ class Activity extends StatelessWidget {
   final String imagePath;
 
   const Activity({
-    Key? key,
+    super.key,
     required this.category,
     required this.title,
     required this.address,
     required this.progressStatus,
     required this.imagePath,
-  }) : super(key: key);
+  });
 
   Color _getStatusColor(String status) {
     switch (status.toLowerCase()) {

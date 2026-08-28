@@ -5,10 +5,10 @@ class ComplaintBudget extends StatelessWidget {
   final int expended;
 
   const ComplaintBudget({
-    Key? key,
+    super.key,
     required this.allocated,
     required this.expended,
-  }) : super(key: key);
+  });
 
   int get percentage => ((expended / allocated) * 100).floor();
   int get disbursed => allocated - expended;

@@ -24,7 +24,7 @@ class ComplaintPage extends StatelessWidget {
 
   final AssetData data;
 
-  const ComplaintPage({Key? key, required this.data}) : super(key: key);
+  const ComplaintPage({super.key, required this.data});
 
   String _getCategoryIconPath(CategoryType category) {
     switch (category) {

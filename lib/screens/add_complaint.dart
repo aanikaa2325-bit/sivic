@@ -210,7 +210,7 @@ class _AddComplaintState extends State<AddComplaint> {
                       dashPattern: [8, 8],
                       radius: Radius.circular(16), // Required for RoundedRectDottedBorderOptions
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: 128,
                       width: double.infinity,
                       child: Column(

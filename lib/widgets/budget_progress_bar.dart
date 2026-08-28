@@ -4,9 +4,9 @@ class BudgetProgressBar extends StatelessWidget {
   final int percentage;
 
   const BudgetProgressBar({
-    Key? key,
+    super.key,
     required this.percentage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

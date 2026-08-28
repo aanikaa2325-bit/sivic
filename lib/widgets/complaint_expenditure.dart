@@ -8,11 +8,11 @@ class ComplaintExpenditure extends StatelessWidget {
   final int amount;
 
   const ComplaintExpenditure({
-    Key? key,
+    super.key,
     required this.title,
     required this.dateTime,
     required this.amount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

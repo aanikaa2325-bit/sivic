@@ -13,7 +13,7 @@ class Status {
 class StatusWidget extends StatelessWidget {
   final List<Status> statuses;
 
-  const StatusWidget({Key? key, required this.statuses}) : super(key: key);
+  const StatusWidget({super.key, required this.statuses});
 
   @override
   Widget build(BuildContext context) {

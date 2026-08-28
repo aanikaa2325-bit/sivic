@@ -22,7 +22,7 @@ class _OtpState extends State<Otp> {
               onChanged: (value) {
                 if (value.length == 1){
                   FocusScope.of(context).nextFocus();
-                };
+                }
               },
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
@@ -49,7 +49,7 @@ class _OtpState extends State<Otp> {
               onChanged: (value) {
                 if (value.length == 1){
                   FocusScope.of(context).nextFocus();
-                };
+                }
               },
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
@@ -76,7 +76,7 @@ class _OtpState extends State<Otp> {
               onChanged: (value) {
                 if (value.length == 1){
                   FocusScope.of(context).nextFocus();
-                };
+                }
               },
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
@@ -103,7 +103,7 @@ class _OtpState extends State<Otp> {
               onChanged: (value) {
                 if (value.length == 1){
                   FocusScope.of(context).nextFocus();
-                };
+                }
               },
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,

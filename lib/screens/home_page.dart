@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 SizedBox(width: 4),
                                 Text(
-                                  '$address',
+                                  address,
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
