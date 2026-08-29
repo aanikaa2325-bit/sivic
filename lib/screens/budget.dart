@@ -86,10 +86,90 @@ class _BudgetState extends State<Budget> {
                           color: Color(0xFF525D52),
                         ),
                       ),
+                      Text('৳ 75,56,250',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 24,
+                            color: Color(0xFF333733),
+                          ),
+                      ),
+                      SizedBox(height: 13.5),
+                      Container(
+                        height: 50,
+                        width: 292,
+                        decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(18),
+                        ),
+                      ),
+
                     ],
                   ),
                 ),
               ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Approved Expenditure',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Color(0xFF333733),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  Text('Thu Apr 23',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                    color: Color(0xFF848D84),
+                  ),
+                ),
+                ],
+                ),
+              ) ,
+              SizedBox(height: 12),
+
+            Container(
+              height: 106,
+              width: 328,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(19),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Laborer cost',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                            color: Color(0xFF333733),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
             ],
           ),
         ),
