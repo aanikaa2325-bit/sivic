@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sivic/widgets/activity.dart';
 import 'package:sivic/widgets/budget_progress_bar.dart';
 import 'package:sivic/screens/profile.dart';
+import 'package:sivic/screens/complaint_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -404,20 +405,52 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 14),
-                Activity(
-                  category: 'Infrastructure',
-                  title: 'Broken Street',
-                  address: 'Uttara C/A Lane, Uttara',
-                  progressStatus: 'In progress',
-                  imagePath: 'assets/images/issue_image_1.png',
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ComplaintPage(
+                          data: AssetData(
+                            title: "Broken Street Lamp",
+                            location: "Road #137, Block B, Gulshan-1",
+                            imagePath: "assets/images/complaint_image_1.png",
+                            category: CategoryType.infrastructure,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  child: Activity(
+                    category: 'Infrastructure',
+                    title: 'Broken Street Lamp',
+                    address: 'Road #137, Block B, Gulshan-1',
+                    progressStatus: 'In progress',
+                    imagePath: 'assets/images/complaint_image_1.png',
+                  ),
                 ),
                 SizedBox(height: 8),
-                Activity(
-                  category: 'Sanitation/Waste',
-                  title: 'Broken Water Main',
-                  address: 'Road #137, Block B, Gulshan-1',
-                  progressStatus: 'Under review',
-                  imagePath: 'assets/images/issue_image_2.png',
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ComplaintPage(
+                        data: AssetData(
+                          title: "Broken Water Main",
+                          location: "Uttara C/A Lane, Uttara 1231",
+                          imagePath: "assets/images/issue_image_2.png",
+                          category: CategoryType.waste,
+                        ),
+                      ),
+                      ),
+                    );
+                  },
+                  child: Activity(
+                    category: 'Sanitation/Waste',
+                    title: 'Broken Water Main',
+                    address: 'Uttara C/A Lane, Uttara 1231',
+                    progressStatus: 'Under review',
+                    imagePath: 'assets/images/issue_image_2.png',
+                  ),
                 ),
                 SizedBox(height: 16),
               ],
