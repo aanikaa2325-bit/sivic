@@ -7,6 +7,7 @@ import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/screens/login_page.dart';
 import 'package:sivic/screens/profile.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 
 void main() {
