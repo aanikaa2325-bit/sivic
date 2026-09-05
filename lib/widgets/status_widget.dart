@@ -35,6 +35,7 @@ class StatusWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // ignore: avoid_unnecessary_containers
                   Container(
                     child: Image.asset(
                       isLatest
