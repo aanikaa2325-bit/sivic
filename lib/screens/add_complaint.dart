@@ -166,9 +166,9 @@ class _AddComplaintState extends State<AddComplaint> {
                             SizedBox(width: 6),
                             Text('Tap to set a pin',
                               style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xFF474F47),
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFF474F47),
                               ),
                             ),
                           ],
@@ -210,8 +210,7 @@ class _AddComplaintState extends State<AddComplaint> {
                       dashPattern: [8, 8],
                       radius: Radius.circular(16), // Required for RoundedRectDottedBorderOptions
                     ),
-                    // ignore: sized_box_for_whitespace
-                    child: Container(
+                    child: SizedBox(
                       height: 128,
                       width: double.infinity,
                       child: Column(
@@ -220,16 +219,16 @@ class _AddComplaintState extends State<AddComplaint> {
                         children: [
                           Image(image: AssetImage('assets/icons/camera.png'), height: 20, width: 20),
                           Text('Upload photo', style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF333733),
-                            ),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF333733),
+                          ),
                           ),
                           Text('JPEG on PNG up to 50 MB', style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xFF848D84),
-                            ),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF848D84),
+                          ),
                           ),
                         ],
                       ),
@@ -257,21 +256,21 @@ class _AddComplaintState extends State<AddComplaint> {
                                   Image (image: AssetImage('assets/icons/info.png'), height: 20, width: 20,),
                                   SizedBox(width: 8),
                                   Text('Automatic Fiscal Tracking', style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF333733),
-                                      height: 1.2,
-                                    ),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xFF333733),
+                                    height: 1.2,
+                                  ),
                                   ),
                                 ],
                               ),
                               SizedBox(height: 8),
                               Text('Once reported, this ticket links to our live civic ledger. Citizens can monitor approved allocations and exact expenditure reports.',
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xFF848D84),
-                                  ),
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xFF848D84),
+                                ),
                               ),
                             ],
                           ),
