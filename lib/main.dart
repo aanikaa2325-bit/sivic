@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/budget.dart';
-import 'package:sivic/navigation_menu.dart';
-import 'package:sivic/screens/add_complaint.dart';
 import 'package:sivic/screens/complaint_page.dart';
-import 'package:sivic/screens/feed.dart';
-import 'package:sivic/screens/home_page.dart';
-import 'package:sivic/screens/login_page.dart';
-import 'package:sivic/screens/profile.dart';
-
 
 void main() {
-  runApp(Sivic());
+  runApp(const Sivic());
 }
 
 class Sivic extends StatelessWidget {
@@ -50,7 +43,14 @@ class Sivic extends StatelessWidget {
           ),
         )
       ),
-      home: Budget(),
+      home: ComplaintPage(
+        data: AssetData(
+          title: 'Broken Streetlight',
+          location: '123 Main Street, Springfield',
+          imagePath: 'assets/images/complaint_image_1.png',
+          category: CategoryType.power,
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 
 class ComplaintExpenditure extends StatelessWidget {
@@ -8,11 +9,11 @@ class ComplaintExpenditure extends StatelessWidget {
   final int amount;
 
   const ComplaintExpenditure({
-    Key? key,
+    super.key,
     required this.title,
     required this.dateTime,
     required this.amount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class ComplaintExpenditure extends StatelessWidget {
               children: [
                 Text('৳ ', style: TextStyle(color: Color(0xFF848D84), fontSize: 14, fontWeight: FontWeight.w500),),
                 SizedBox(width: 3),
-                Text('$amount', style: TextStyle(color: Color(0xFF333733), fontSize: 14, fontWeight: FontWeight.w500),),
+                Text('${NumberFormat('#,##,##0', 'en_IN').format(amount)}', style: TextStyle(color: Color(0xFF333733), fontSize: 14, fontWeight: FontWeight.w500),),
               ],
             ),
           ],

@@ -6,11 +6,11 @@ class BudgetBarExpanded extends StatelessWidget {
   final int total;
 
   const BudgetBarExpanded({
-    Key? key,
+    super.key,
     required this.approved,
     required this.disbursed,
     required this.total,
-  }) : super(key: key);
+  });
 
   int get percentage => ((approved / total) * 100).floor();
 

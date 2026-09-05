@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/widgets/status_widget.dart';
-import 'package:sivic/widgets/voting_widget.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

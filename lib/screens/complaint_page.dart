@@ -24,7 +24,7 @@ class ComplaintPage extends StatelessWidget {
 
   final AssetData data;
 
-  const ComplaintPage({Key? key, required this.data}) : super(key: key);
+  const ComplaintPage({super.key, required this.data});
 
   String _getCategoryIconPath(CategoryType category) {
     switch (category) {
@@ -35,6 +35,7 @@ class ComplaintPage extends StatelessWidget {
       case CategoryType.waste:
         return 'assets/icons/waste.png';
       case CategoryType.general:
+      // ignore: unreachable_switch_default
       default:
         return 'assets/icons/general.png';
     }
@@ -50,6 +51,7 @@ class ComplaintPage extends StatelessWidget {
         return 'Sanitation / Waste';
       case CategoryType.general:
         return 'General';
+      // ignore: unreachable_switch_default
       default:
         return 'Unknown Category';
     }
