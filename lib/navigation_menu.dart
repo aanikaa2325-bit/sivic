@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
+import 'package:sivic/screens/budget.dart';
+import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/widgets/selection.dart';
 import 'package:sivic/screens/terms_of_use.dart';
 import 'package:sivic/screens/profile.dart';
+import 'package:sivic/screens/crowdfund.dart';
 
 
 class NavigationMenu extends StatefulWidget {
@@ -19,9 +22,9 @@ class _NavigationMenuState extends State<NavigationMenu> {
   final List<Widget> screens = [
     const HomePage(),
     const AddComplaint(),
-    const Selection(),
-    const TermsOfUse(),
-    const Profile(),
+    const Feed(),
+    const Budget(),
+    const Crowdfund(),
   ];
 
   @override

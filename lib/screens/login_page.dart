@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/navigation_menu.dart';
+import 'package:sivic/screens/enter_password.dart';
 import 'package:sivic/screens/privacy_policy.dart';
 import 'package:sivic/screens/signup_page.dart';
 import 'package:sivic/screens/terms_of_use.dart';
@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const NavigationMenu(),
+                              builder: (context) => const EnterPassword(),
                             ),
                           );
                         },

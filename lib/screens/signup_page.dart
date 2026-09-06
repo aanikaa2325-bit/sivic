@@ -13,8 +13,20 @@ class _SignupPageState extends State<SignupPage> {
 
   bool _isPasswordHidden = true;
   bool _isConfirmPasswordHidden = true;
+  bool _showEmptyError = false;
+  bool _showMismatchError = false;
+  bool _showLengthError = false;
+
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   @override
+  void dispose() {
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -177,6 +189,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       SizedBox(height: 8),
                       TextField(
+                        controller: _passwordController,
                         cursorColor: Color(0xFF4A8B4A),
                         obscureText: _isPasswordHidden,
                         style: TextStyle(
@@ -184,6 +197,10 @@ class _SignupPageState extends State<SignupPage> {
                           fontWeight: FontWeight.w400,
                         ),
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: (_showEmptyError || _showMismatchError || _showLengthError) ? Color(0xFFF86B59) : Color(0xFFDFE6DF), width: 1.5),
+                          ),
                           suffixIcon: Padding(
                             padding: const EdgeInsets.only(right: 4.0),
                             child: IconButton(
@@ -217,6 +234,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       SizedBox(height: 8),
                       TextField(
+                        controller: _confirmPasswordController,
                         cursorColor: Color(0xFF4A8B4A),
                         obscureText: _isConfirmPasswordHidden,
                         style: TextStyle(
@@ -224,6 +242,10 @@ class _SignupPageState extends State<SignupPage> {
                           fontWeight: FontWeight.w400,
                         ),
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: (_showEmptyError || _showMismatchError || _showLengthError) ? Color(0xFFF86B59) : Color(0xFFDFE6DF), width: 1.5),
+                          ),
                           suffixIcon: Padding(
                             padding: const EdgeInsets.only(right: 4.0),
                             child: IconButton(
@@ -246,23 +268,78 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 32),
+                  if (_showEmptyError)...[
+                    SizedBox(height: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4.0),
+                      child: Text('Password field(s) cannot be empty.',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFFF86B59),
+                        ),
+                      ),
+                    ),
+                  ]
+                  else if (_showMismatchError)...[
+                    SizedBox(height: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4.0),
+                      child: Text('Passwords do not match',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFFF86B59),
+                        ),
+                      ),
+                    ),
+                  ]
+                  else if (_showLengthError)...[
+                      SizedBox(height: 16),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 4.0),
+                        child: Text('Password must be at least 8 digits.',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFFF86B59),
+                          ),
+                        ),
+                      ),
+                    ],
+                  SizedBox(height: 24),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: 56,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
+                      GestureDetector(
+                        onTap: () {
+                            setState(() {
+                              final pass = _passwordController.text;
+                              final confirmPass = _confirmPasswordController.text;
+
+                              _showEmptyError = false;
+                              _showMismatchError = false;
+
+                              if (pass.isEmpty || confirmPass.isEmpty) {
+                                _showEmptyError = true;
+                              } else if (pass != confirmPass) {
+                                _showMismatchError = true;
+                              } else if (pass.length<8 || confirmPass.length<8){
+                                _showLengthError = true;
+                              }
+                              else {
+                                Navigator.pushAndRemoveUntil(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const OtpPage(),
-                                  ),
+                                  MaterialPageRoute(builder: (context) => const OtpPage(isFromForgotPassword: false)),
+                                      (Route<dynamic> route) => false,
                                 );
-                              },
+                              }
+                            });
+                          },
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 56,
                               child: Container(
                                 padding: EdgeInsets.all(16),
                                 decoration: BoxDecoration(
@@ -279,8 +356,8 @@ class _SignupPageState extends State<SignupPage> {
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       SizedBox(height: 12),
                       Row(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/screens/budget.dart';
+import 'package:sivic/screens/login_page.dart';
+import 'package:sivic/screens/signup_page.dart';
 
 
 void main() {
@@ -43,7 +44,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: Budget(),
+      home: LoginPage(),
     );
   }
 }

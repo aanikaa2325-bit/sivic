@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sivic/navigation_menu.dart';
+import 'package:sivic/screens/create_new_pass.dart';
 import 'package:sivic/screens/privacy_policy.dart';
 import 'package:sivic/screens/terms_of_use.dart';
 import 'package:sivic/widgets/otp.dart';
 
 class OtpPage extends StatefulWidget {
-  const OtpPage({super.key});
+  final bool isFromForgotPassword;
 
+  const OtpPage({
+    Key? key,
+    this.isFromForgotPassword = false,
+  }) : super(key: key);
+  
   @override
   State<OtpPage> createState() => _OtpPageState();
 }
@@ -62,19 +69,29 @@ class _OtpPageState extends State<OtpPage> {
                     SizedBox(height: 20),
                     Otp(),
                     SizedBox(height: 28),
-                    SizedBox(
-                      height: 56,
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Color(0xFF1C1F1C),
-                          borderRadius: BorderRadius.circular(18),
-                        ),
-                        child: Center(
-                          child: Text('Continue',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          widget.isFromForgotPassword
+                              ? MaterialPageRoute(builder: (context) => const CreateNewPass())
+                              : MaterialPageRoute(builder: (context) => const NavigationMenu()),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 56,
+                        child: Container(
+                          padding: EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF1C1F1C),
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: Center(
+                            child: Text('Continue',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
