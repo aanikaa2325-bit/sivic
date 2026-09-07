@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/feed_post.dart';
+import 'package:sivic/screens/feed_map.dart';
 import 'package:sivic/screens/login_page.dart';
 import 'package:sivic/screens/signup_page.dart';
 
@@ -45,7 +46,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: FeedPost(),
+      home: FeedMap(),
     );
   }
 }
