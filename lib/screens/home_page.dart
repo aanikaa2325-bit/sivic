@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sivic/navigation_menu.dart';
 import 'package:sivic/widgets/activity.dart';
 import 'package:sivic/widgets/budget_progress_bar.dart';
 import 'package:sivic/screens/profile.dart';
@@ -317,67 +318,77 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(18),
                   ),
 
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 14.0, left: 18.0, right: 14.0, bottom: 18),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Budget used', style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF525D52),
-                                    ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text('$budgetUsed%', style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xFF333733),
-                                        ),
-                                        ),
-                                        SizedBox(width: 8),
-                                        Container(
-                                          height: 24,
-                                          width: 100,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFC0F686),
-                                            borderRadius: BorderRadius.circular(8),
-                                          ),
-                                          child: Center(
-                                            child: Text('+$disbursedBudget this week', style: TextStyle(
-                                              fontSize: 11,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF333733),
-                                            ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                Image(image: AssetImage('assets/icons/analytics.png'), height: 52, width: 52),
-                              ],
-                            ),
-                            SizedBox(height: 12),
-
-                            BudgetProgressBar(
-                              percentage: budgetUsed,
-                            ),
-                          ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NavigationMenu(initialIndex: 3),
                         ),
-                      ),
-                    ],
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 14.0, left: 18.0, right: 14.0, bottom: 18),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Budget used', style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF525D52),
+                                      ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text('$budgetUsed%', style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xFF333733),
+                                          ),
+                                          ),
+                                          SizedBox(width: 8),
+                                          Container(
+                                            height: 24,
+                                            width: 100,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFC0F686),
+                                              borderRadius: BorderRadius.circular(8),
+                                            ),
+                                            child: Center(
+                                              child: Text('+$disbursedBudget this week', style: TextStyle(
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.w500,
+                                                color: Color(0xFF333733),
+                                              ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  Image(image: AssetImage('assets/icons/analytics.png'), height: 52, width: 52),
+                                ],
+                              ),
+                              SizedBox(height: 12),
+
+                              BudgetProgressBar(
+                                percentage: budgetUsed,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 32),

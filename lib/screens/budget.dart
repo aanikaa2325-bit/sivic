@@ -261,7 +261,6 @@ class _BudgetState extends State<Budget> {
                     approved: 306250,
                     prevDisbursed: 58,
                 ),
-                SizedBox(height: 4),
                 Expenditure(
                     title: 'Material Cost',
                     amount: 23250,
@@ -290,6 +289,7 @@ class _BudgetState extends State<Budget> {
                   approved: 306250,
                   prevDisbursed: 58,
                 ),
+                SizedBox(height: 32),
               ],
             ),
           ),

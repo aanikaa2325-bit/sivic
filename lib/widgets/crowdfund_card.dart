@@ -178,7 +178,7 @@ class CrowdfundCard extends StatelessWidget {
                               ),
                               Container(
                                 alignment: Alignment.center,
-                                height: 36,
+                                height: 40,
                                 decoration: BoxDecoration(
                                   color: Color(0xFF1C1F1C),
                                   borderRadius: BorderRadius.circular(12),
@@ -187,7 +187,8 @@ class CrowdfundCard extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                                   child: Text('Back project',
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -195,7 +196,7 @@ class CrowdfundCard extends StatelessWidget {
                               )
                             ],
                           ),
-                          SizedBox(height: 12),
+                          SizedBox(height: 8),
                         ],
                       ),
                     ),

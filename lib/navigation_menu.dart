@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
 import 'package:sivic/screens/budget.dart';
 import 'package:sivic/screens/feed.dart';
+import 'package:sivic/screens/feed_post.dart';
 import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/widgets/selection.dart';
 import 'package:sivic/screens/terms_of_use.dart';
@@ -10,19 +11,31 @@ import 'package:sivic/screens/crowdfund.dart';
 
 
 class NavigationMenu extends StatefulWidget {
-  const NavigationMenu({super.key});
+  final int initialIndex;
+
+  const NavigationMenu({
+    super.key,
+    this.initialIndex = 0,
+  });
+
 
   @override
   State<NavigationMenu> createState() => _NavigationMenuState();
 }
 
 class _NavigationMenuState extends State<NavigationMenu> {
-  int currentIndex = 0;
+  late int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = widget.initialIndex;
+  }
 
   final List<Widget> screens = [
     const HomePage(),
     const AddComplaint(),
-    const Feed(),
+    const FeedPost(),
     const Budget(),
     const Crowdfund(),
   ];
@@ -57,6 +70,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
           indicatorShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
+
           selectedIndex: currentIndex,
 
           onDestinationSelected: (index) {

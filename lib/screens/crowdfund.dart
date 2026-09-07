@@ -158,6 +158,7 @@ class _CrowdfundState extends State<Crowdfund> {
                   profilePhoto: 'assets/images/user_icon.png',
                   description: 'Raising fund for placing trash cans nearside Hatirjheel Lake area.',
                 ),
+                SizedBox(height: 24),
               ],
             ),
           ),

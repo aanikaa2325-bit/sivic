@@ -26,90 +26,95 @@ class Expenditure extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF333733),
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Row(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(projectName,
+                          Text(title,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF525D52),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF333733),
                             ),
                           ),
-                          SizedBox(width: 4),
-                          Image(image: AssetImage('assets/icons/export.png'), height: 16, width: 16,),
+                          SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Text(projectName,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF525D52),
+                                ),
+                              ),
+                              SizedBox(width: 4),
+                              Image(image: AssetImage('assets/icons/export.png'), height: 16, width: 16,),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(width: 20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Disbursed $newDisbursed%',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xFF525D52),
+                          ),
+                        ),
+                        SizedBox(height: 2),
+                        Disbursed(disbursed: newDisbursed),
+                      ],
+                    ),
+                  ],
                 ),
-                SizedBox(width: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Disbursed $newDisbursed%',
+                    Text(dateTime,
                       style: TextStyle(
-                        fontSize: 11,
-                        color: Color(0xFF525D52),
+                        fontSize: 12,
+                        color: Color(0xFF848D84),
                       ),
                     ),
-                    SizedBox(height: 2),
-                    Disbursed(disbursed: newDisbursed),
+                    Text('৳ ${NumberFormat('#,##,##0', 'en_IN').format(amount)}',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF333733),
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(dateTime,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF848D84),
-                  ),
-                ),
-                Text('৳ ${NumberFormat('#,##,##0', 'en_IN').format(amount)}',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF333733),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          ),
         ),
-      ),
+        SizedBox(height: 6),
+      ],
     );
   }
 }
