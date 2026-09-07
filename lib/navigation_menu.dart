@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
 import 'package:sivic/screens/budget.dart';
 import 'package:sivic/screens/feed.dart';
-import 'package:sivic/screens/feed_post.dart';
 import 'package:sivic/screens/home_page.dart';
 import 'package:sivic/widgets/selection.dart';
 import 'package:sivic/screens/terms_of_use.dart';
@@ -35,7 +34,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
   final List<Widget> screens = [
     const HomePage(),
     const AddComplaint(),
-    const FeedPost(),
+    const Feed(),
     const Budget(),
     const Crowdfund(),
   ];

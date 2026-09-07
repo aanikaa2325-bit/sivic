@@ -12,6 +12,7 @@ class CrowdfundCard extends StatelessWidget {
   final String profilePhoto;
   final String description;
   final String? imageData;
+  final VoidCallback onBackTap;
 
 
   const CrowdfundCard({
@@ -24,6 +25,7 @@ class CrowdfundCard extends StatelessWidget {
     required this.userName,
     required this.profilePhoto,
     required this.description,
+    required this.onBackTap,
     this.imageData,
   }) : super(key: key);
 
@@ -176,20 +178,23 @@ class CrowdfundCard extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF1C1F1C),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                                  child: Text('Back project',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                              GestureDetector(
+                                onTap: onBackTap,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF1C1F1C),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                                    child: Text('Back project',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -206,7 +211,6 @@ class CrowdfundCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8),
       ],
     );
   }

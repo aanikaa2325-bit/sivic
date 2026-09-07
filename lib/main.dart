@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/screens/feed_post.dart';
-import 'package:sivic/screens/feed_map.dart';
+import 'package:sivic/navigation_menu.dart';
+import 'package:sivic/screens/crowdfund.dart';
+import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/login_page.dart';
 import 'package:sivic/screens/signup_page.dart';
 
@@ -34,7 +35,7 @@ class Sivic extends StatelessWidget {
             hintStyle: TextStyle(
               color: Color(0xFFB8BEB8),
               fontSize: 14,
-              fontWeight: FontWeight(400),
+              fontWeight: FontWeight.w400,
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(18),
@@ -46,7 +47,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: FeedMap(),
+      home: Crowdfund(),
     );
   }
 }
