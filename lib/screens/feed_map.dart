@@ -113,12 +113,18 @@ class FeedMap extends StatelessWidget {
                     ),
                   ),
 
-                  FeedPostCard(
-                      isOnMap: true,
-                      category: 'Sanitation/Waste',
-                      title: 'Broken Water Main',
-                      address: 'Road#137,Block B, Gulshan 1',
-                      progressStatus: 'In Progress',
+                  Positioned(
+                    bottom: 88,
+                    left: 20,
+                    right: 20,
+                    child: FeedPostCard(
+                        isOnMap: false,
+                        category: 'Sanitation/Waste',
+                        title: 'Broken Water Main',
+                        address: 'Road#137,Block B, Gulshan 1',
+                        progressStatus: 'In Progress',
+                        imageData: 'assets/images/complaint_image_1.png',
+                    ),
                   ),
                 ],
               ),
