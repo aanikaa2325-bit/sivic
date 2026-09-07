@@ -48,7 +48,7 @@ class FeedPost extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Center(
-                                      child: Image(image: AssetImage('assets/icons/unhide.png'), height: 24, width: 24),
+                                      child: Image(image: AssetImage('assets/icons/post_view_active.png'), height: 24, width: 24),
                                     ),
                                   ),
                                   Container(
@@ -59,7 +59,7 @@ class FeedPost extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Center(
-                                      child: Image(image: AssetImage('assets/icons/unhide.png'), height: 24, width: 24),
+                                      child: Image(image: AssetImage('assets/icons/map_view_inactive.png'), height: 24, width: 24),
                                     ),
                                   ),
                                 ],
