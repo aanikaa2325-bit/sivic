@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/screens/add_complaint.dart';
+import 'package:sivic/screens/complaints.dart';
 import 'package:sivic/screens/budget.dart';
 import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/home_page.dart';
@@ -33,7 +33,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
 
   final List<Widget> screens = [
     const HomePage(),
-    const AddComplaint(),
+    const Complaints(),
     const Feed(),
     const Budget(),
     const Crowdfund(),

@@ -416,52 +416,56 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 14),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ComplaintPage(
-                          data: AssetData(
-                            title: "Broken Street Lamp",
-                            location: "Road #137, Block B, Gulshan-1",
-                            imagePath: "assets/images/complaint_image_1.png",
-                            category: CategoryType.infrastructure,
+                Column(
+                  spacing: 8.0,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ComplaintPage(
+                              data: AssetData(
+                                title: "Broken Street Lamp",
+                                location: "Road #137, Block B, Gulshan-1",
+                                imagePath: "assets/images/complaint_image_1.png",
+                                category: CategoryType.infrastructure,
+                              ),
+                            ),
                           ),
-                        ),
+                        );
+                      },
+                      child: Activity(
+                        category: 'Infrastructure',
+                        title: 'Broken Street Lamp',
+                        address: 'Road #137, Block B, Gulshan-1',
+                        progressStatus: 'In progress',
+                        imagePath: 'assets/images/complaint_image_1.png',
                       ),
-                    );
-                  },
-                  child: Activity(
-                    category: 'Infrastructure',
-                    title: 'Broken Street Lamp',
-                    address: 'Road #137, Block B, Gulshan-1',
-                    progressStatus: 'In progress',
-                    imagePath: 'assets/images/complaint_image_1.png',
-                  ),
-                ),
-                SizedBox(height: 8),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ComplaintPage(
-                        data: AssetData(
-                          title: "Broken Water Main",
-                          location: "Uttara C/A Lane, Uttara 1231",
-                          imagePath: "assets/images/issue_image_2.png",
-                          category: CategoryType.waste,
-                        ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ComplaintPage(
+                            data: AssetData(
+                              title: "Broken Water Main",
+                              location: "Uttara C/A Lane, Uttara 1231",
+                              imagePath: "assets/images/issue_image_2.png",
+                              category: CategoryType.waste,
+                            ),
+                          ),
+                          ),
+                        );
+                      },
+                      child: Activity(
+                        category: 'Sanitation/Waste',
+                        title: 'Broken Water Main',
+                        address: 'Uttara C/A Lane, Uttara 1231',
+                        progressStatus: 'Under review',
+                        imagePath: 'assets/images/issue_image_2.png',
                       ),
-                      ),
-                    );
-                  },
-                  child: Activity(
-                    category: 'Sanitation/Waste',
-                    title: 'Broken Water Main',
-                    address: 'Uttara C/A Lane, Uttara 1231',
-                    progressStatus: 'Under review',
-                    imagePath: 'assets/images/issue_image_2.png',
-                  ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 16),
               ],

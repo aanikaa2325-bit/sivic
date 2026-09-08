@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/navigation_menu.dart';
+import 'package:sivic/screens/complaints.dart';
 import 'package:sivic/screens/crowdfund.dart';
 import 'package:sivic/screens/feed.dart';
 import 'package:sivic/screens/login_page.dart';
