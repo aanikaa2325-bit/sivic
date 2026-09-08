@@ -149,13 +149,14 @@ class PostCard extends StatelessWidget {
                           color: Color(0xFF333733),
                         ),
                       ),
+                      SizedBox(height: 4),
                       Row(
                         children: [
                           Image(image: AssetImage('assets/icons/location_pin.png'), height: 14, width: 14),
                           SizedBox(width: 5),
                           Text(address,
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 13,
                               fontWeight: FontWeight.w500,
                               color: Color(0xFF848D84),
                             ),

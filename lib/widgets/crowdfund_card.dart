@@ -185,10 +185,10 @@ class CrowdfundCard extends StatelessWidget {
                                   height: 40,
                                   decoration: BoxDecoration(
                                     color: Color(0xFF1C1F1C),
-                                    borderRadius: BorderRadius.circular(12),
+                                    borderRadius: BorderRadius.circular(13),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                     child: Text('Back project',
                                       style: TextStyle(
                                         fontSize: 13,

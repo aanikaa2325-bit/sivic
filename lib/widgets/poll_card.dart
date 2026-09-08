@@ -63,13 +63,13 @@ class _PollCardState extends State<PollCard> {
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Text(widget.question,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF333733),
                   ),
                 ),
               ),
-              SizedBox(height: 18),
+              SizedBox(height: 20),
               ...List.generate(
                 widget.options.length,
                     (index) => _buildOption(index),
@@ -94,14 +94,14 @@ class _PollCardState extends State<PollCard> {
                       SizedBox(width: 8),
                       Row(
                         children: [
-                          Text('by', style: TextStyle(fontSize: 12, color: Color(0xFF848D84),),),
+                          Text('by', style: TextStyle(fontSize: 13, color: Color(0xFF848D84),),),
                           SizedBox(width: 3),
-                          Text(widget.pollCreator, style: TextStyle(fontSize: 12, color: Color(0xFF505C50),),),
+                          Text(widget.pollCreator, style: TextStyle(fontSize: 13, color: Color(0xFF505C50),),),
                         ],
                       ),
                     ],
                   ),
-                  Text(_timeRemainingText, style: TextStyle(fontSize: 12, color: Color(0xFF848D84),),),
+                  Text(_timeRemainingText, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xFF848D84),),),
                 ],
               ),
             )
@@ -126,31 +126,31 @@ class _PollCardState extends State<PollCard> {
           child: Stack(
             children: [
               Container(
-                height: 40,
+                height: 48,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color (0xFFF5F6F5),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(14),
                 ),
               ),
               if (showResult)...[
                 FractionallySizedBox(
                   widthFactor: widget.percentages[index] / 100,
                   child: Container(
-                    height: 40,
+                    height: 48,
                     decoration: BoxDecoration(
                       color: isSelected ? Color(0xFFC0F686) : Color(0xFFE2F5CD),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(14),
                     ),
                   ),
                 ),
               ],
               Container(
-                height: 40,
+                height: 48,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(14),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -161,13 +161,13 @@ class _PollCardState extends State<PollCard> {
                         children: [
                           Image(image: AssetImage(
                               isSelected ? 'assets/icons/checkbox_rounded_selected.png' : (showResult) ? 'assets/icons/checkbox_rounded_result.png' : 'assets/icons/checkbox_rounded_default.png'
-                          ), height: 20, width: 20,),
+                          ), height: 24, width: 24,),
                           SizedBox(width: 8),
                           Text(widget.options[index],
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                  fontSize: 13,
+                                  fontSize: 14,
                                   color: Color(0xFF3C4049),
                               )
                           ),

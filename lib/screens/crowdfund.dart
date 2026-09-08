@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:sivic/widgets/budget_bar_expanded.dart';
 import 'package:sivic/widgets/crowdfund_card.dart';
@@ -94,6 +95,10 @@ class _CrowdfundState extends State<Crowdfund> {
                                       SizedBox(
                                         width: 160,
                                         child: TextField(
+                                          keyboardType: TextInputType.number,
+                                          inputFormatters: <TextInputFormatter>[
+                                            FilteringTextInputFormatter.digitsOnly,
+                                          ],
                                           controller: _amountController,
                                           textAlign: TextAlign.center,
                                           cursorColor: Color(0xFF437043),
@@ -164,10 +169,10 @@ class _CrowdfundState extends State<Crowdfund> {
                                         });
                                       },
                                       child: Container(
-                                        height: 40,
+                                        height: 48,
                                         decoration: BoxDecoration(
                                           color: _quickAmountIndex == 0 ? Color(0xFFC0F686) : Colors.transparent,
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius: BorderRadius.circular(14),
                                           border: Border.all(color: Color(0xFFE4E8E4), width: 1.25),
                                         ),
                                         child: Padding(
@@ -184,10 +189,10 @@ class _CrowdfundState extends State<Crowdfund> {
                                         });
                                       },
                                       child: Container(
-                                        height: 40,
+                                        height: 48,
                                         decoration: BoxDecoration(
                                           color: _quickAmountIndex == 1 ? Color(0xFFC0F686) : Colors.transparent,
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius: BorderRadius.circular(14),
                                           border: Border.all(color: Color(0xFFE4E8E4), width: 1.25),
                                         ),
                                         child: Padding(
@@ -204,10 +209,10 @@ class _CrowdfundState extends State<Crowdfund> {
                                         });
                                       },
                                       child: Container(
-                                        height: 40,
+                                        height: 48,
                                         decoration: BoxDecoration(
                                           color: _quickAmountIndex == 2 ? Color(0xFFC0F686) : Colors.transparent,
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius: BorderRadius.circular(14),
                                           border: Border.all(color: Color(0xFFE4E8E4), width: 1.25),
                                         ),
                                         child: Padding(
@@ -224,10 +229,10 @@ class _CrowdfundState extends State<Crowdfund> {
                                         });
                                       },
                                       child: Container(
-                                        height: 40,
+                                        height: 48,
                                         decoration: BoxDecoration(
                                           color: _quickAmountIndex == 3 ? Color(0xFFC0F686) : Colors.transparent,
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius: BorderRadius.circular(14),
                                           border: Border.all(color: Color(0xFFE4E8E4), width: 1.25),
                                         ),
                                         child: Padding(
@@ -252,14 +257,14 @@ class _CrowdfundState extends State<Crowdfund> {
                                 builder: (context) => PaymentStatus.success(
                                   issuedOn: DateTime.now(),
                                   paymentMethod: 'Credit Card',
-                                  transactionID: '12345',
-                                  amount: 5000,
+                                  transactionID: '# A1B2C3D4E5F6',
+                                  amount: int.tryParse(_amountController.text) ?? 0,
                                 ),
                               ),
                             );
                           },
                           child: Container(
-                            height: 48,
+                            height: 56,
                             decoration: BoxDecoration(
                               color: Color(0xFF1C1F1C),
                               borderRadius: BorderRadius.circular(16),
@@ -360,18 +365,18 @@ class _CrowdfundState extends State<Crowdfund> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      height: 36,
+                      height: 48,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 14.0, right: 10.0),
+                        padding: const EdgeInsets.only(left: 16.0, right: 14.0),
                         child: Row(
                           children: [
                             Row(
                               children: [
-                                Image(image: AssetImage('assets/icons/sort.png'), height: 16, width: 16),
+                                Image(image: AssetImage('assets/icons/sort.png'), height: 20, width: 20),
                                 SizedBox(width: 6),
                                 Text(sort_by,
                                   style: TextStyle(
@@ -383,23 +388,23 @@ class _CrowdfundState extends State<Crowdfund> {
                               ],
                             ),
                             SizedBox(width: 10),
-                            Image(image: AssetImage('assets/icons/arrow_down.png'), height: 20, width: 20),
+                            Image(image: AssetImage('assets/icons/arrow_down.png'), height: 24, width: 24),
           
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      height: 36,
+                      height: 48,
                       decoration: BoxDecoration(
                         color: Color(0xFF1C1F1C),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 14.0, right: 18.0),
+                        padding: const EdgeInsets.only(left: 16.0, right: 18.0),
                         child: Row(
                           children: [
-                            Image(image: AssetImage('assets/icons/add_white.png'), height: 16, width: 16),
+                            Image(image: AssetImage('assets/icons/add_white.png'), height: 20, width: 20),
                             SizedBox(width: 6),
                             Text('New initiative',
                               style: TextStyle(

@@ -180,13 +180,13 @@ class _ComplaintsState extends State<Complaints> {
           );
         },
         child: Container(
-          height: 48,
+          height: 56,
           decoration: BoxDecoration(
             color: Color(0xFF1C1F1C),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 16.0, right: 20.0),
+            padding: const EdgeInsets.only(left: 18.0, right: 22.0),
             child: Row(
               spacing: 8.0,
               mainAxisSize: MainAxisSize.min,

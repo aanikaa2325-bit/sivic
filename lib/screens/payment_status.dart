@@ -62,20 +62,20 @@ class PaymentStatus extends StatelessWidget {
               Column(
                 children: [
                   if (!succeeded)...[
-                    SizedBox(height: 276),
+                    SizedBox(height: 248),
                   ],
                   Container(
-                    height: 56,
-                    width: 56,
+                    height: 72,
+                    width: 72,
                     decoration: BoxDecoration(
                       color: succeeded ? Color(0xFFC0F686) : Color(0xFFF86B59),
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
                       child: Image(
                         image: AssetImage(succeeded ? 'assets/icons/success.png' : 'assets/icons/failed.png'),
-                        height: 24,
-                        width: 24,
+                        height: 32,
+                        width: 32,
                       ),
                     ),
                   ),
@@ -157,7 +157,7 @@ class PaymentStatus extends StatelessWidget {
                                   color: Color(0xFF525D52),
                                 )
                             ),
-                            Text('$amount!',
+                            Text('$amount',
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Color(0xFF303230),
@@ -187,13 +187,13 @@ class PaymentStatus extends StatelessWidget {
                         Align(
                           alignment: Alignment.topRight,
                           child: Container(
-                              height: 36,
+                              height: 48,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(14),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 16, right: 20.0),
+                                padding: const EdgeInsets.only(left: 18, right: 22.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -220,7 +220,7 @@ class PaymentStatus extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 32.0),
                 child: Container(
-                  height: 48,
+                  height: 56,
                   decoration: BoxDecoration(
                     color: Color(0xFF1C1F1C),
                     borderRadius: BorderRadius.circular(16),
