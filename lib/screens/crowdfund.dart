@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:sivic/widgets/budget_bar_expanded.dart';
 import 'package:sivic/widgets/crowdfund_card.dart';
 import 'package:sivic/widgets/expenditure.dart';
+import 'package:sivic/screens/payment_status.dart';
+
 
 class Crowdfund extends StatefulWidget {
   const Crowdfund({super.key});
@@ -244,7 +246,17 @@ class _CrowdfundState extends State<Crowdfund> {
 
                         GestureDetector(
                           onTap: () {
-                            Navigator.pop(context); // Close after successful action
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PaymentStatus.success(
+                                  issuedOn: DateTime.now(),
+                                  paymentMethod: 'Credit Card',
+                                  transactionID: '12345',
+                                  amount: 5000,
+                                ),
+                              ),
+                            );
                           },
                           child: Container(
                             height: 48,
