@@ -157,7 +157,7 @@ class _FeedState extends State<Feed> {
                         title: 'Broken Water Main',
                         address: 'Road#137,Block B, Gulshan 1',
                         progressStatus: 'In Progress',
-                        imageData: 'assets/images/issue_image_2.png.png',
+                        imageData: 'assets/images/issue_image_2.png',
                       ),
                     ),
                   ],
