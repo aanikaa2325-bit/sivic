@@ -12,7 +12,20 @@
           "package_name": "com.sivic.sivic"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "753364903770-hhsv6bq6ilk72k573g61gei06ilbps3j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sivic.sivic",
+            "certificate_hash": "5e8a0c8e04bac5658ccd188f21590d91674fe999"
+          }
+        },
+        {
+          "client_id": "753364903770-lll4v5r9dp7uhuhjmviib6ltiek5afl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCYs2dEHxD9ql08w37TrfFwIJXR409de_E"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753364903770-lll4v5r9dp7uhuhjmviib6ltiek5afl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
