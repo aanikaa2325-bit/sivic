@@ -251,6 +251,12 @@ class _CrowdfundState extends State<Crowdfund> {
 
                         GestureDetector(
                           onTap: () {
+                            final amount = int.tryParse(_amountController.text) ?? 0;
+
+                            FocusScope.of(context).unfocus();
+
+                            Navigator.pop(context);
+
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -258,7 +264,7 @@ class _CrowdfundState extends State<Crowdfund> {
                                   issuedOn: DateTime.now(),
                                   paymentMethod: 'Credit Card',
                                   transactionID: '# A1B2C3D4E5F6',
-                                  amount: int.tryParse(_amountController.text) ?? 0,
+                                  amount: amount,
                                 ),
                               ),
                             );

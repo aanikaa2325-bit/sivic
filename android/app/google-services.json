@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "753364903770",
+    "project_id": "sivic-f2b35",
+    "storage_bucket": "sivic-f2b35.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753364903770:android:a469b442f2b83bdfef3563",
+        "android_client_info": {
+          "package_name": "com.sivic.sivic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYs2dEHxD9ql08w37TrfFwIJXR409de_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

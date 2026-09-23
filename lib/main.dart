@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/navigation_menu.dart';
-import 'package:sivic/screens/complaints.dart';
-import 'package:sivic/screens/crowdfund.dart';
-import 'package:sivic/screens/feed.dart';
+import 'package:sivic/auth_gate.dart';
 import 'package:sivic/screens/login_page.dart';
-import 'package:sivic/screens/payment_status.dart';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:sivic/screens/signup_page.dart';
+import 'firebase_options.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  runApp(Sivic());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const Sivic());
 }
 
 class Sivic extends StatelessWidget {
@@ -47,9 +51,17 @@ class Sivic extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: Color(0xFFA1CC74), width: 1.5),
             ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(18),
+              borderSide: const BorderSide(color: Color(0xFFF86B59), width: 1.5),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(18),
+              borderSide: const BorderSide(color: Color(0xFFF86B59), width: 1.5),
+            ),
           )
       ),
-      home: NavigationMenu(),
+      home: AuthGate(),
     );
   }
 }

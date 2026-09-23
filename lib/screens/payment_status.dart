@@ -219,18 +219,23 @@ class PaymentStatus extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 32.0),
-                child: Container(
-                  height: 56,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1C1F1C),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: Text('Go back',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1C1F1C),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Center(
+                      child: Text('Go back',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

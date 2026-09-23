@@ -10,25 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2d4a5a-f35b-4978-ab8d-2b5cec0f9da9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sivic_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sivic_android.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/navigation_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/navigation_menu.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/add_complaint.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/add_complaint.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/complaint_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/complaint_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/crowdfund.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/crowdfund.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/feed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/feed.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lib/screens/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/activity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/activity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/budget_bar_expanded.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/budget_bar_expanded.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/budget_progress_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/budget_progress_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/complaint_budget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/complaint_budget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/complaint_expenditure.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/complaint_expenditure.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/widgets/otp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/otp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/payment_status.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/payment_status.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/privacy_policy.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/privacy_policy.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/terms_of_use.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/terms_of_use.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/widgets/poll_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/poll_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/widgets/post_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/post_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lib/widgets/status_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/widgets/status_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sivic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../sivic.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="android" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -72,13 +90,15 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev1",
     "io.flutter.project.isFirstOpen": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Project/sivic/android",
