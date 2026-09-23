@@ -57,7 +57,6 @@ class _AddPollState extends State<AddPoll> {
       return;
     }
 
-    // 2. Build the options list
     List<Map<String, dynamic>> options = [
       {'text': opt1, 'votes': 0},
       {'text': opt2, 'votes': 0},
@@ -74,7 +73,6 @@ class _AddPollState extends State<AddPoll> {
     setState(() => _isUploading = true);
 
     try {
-      // 3. Upload to Firestore
       await FirebaseFirestore.instance.collection('polls').add({
         'question': question,
         'options': options,

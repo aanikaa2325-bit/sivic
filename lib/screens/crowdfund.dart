@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:sivic/screens/add_crowdfund.dart';
 import 'package:sivic/widgets/budget_bar_expanded.dart';
 import 'package:sivic/widgets/crowdfund_card.dart';
 import 'package:sivic/widgets/expenditure.dart';
@@ -400,26 +401,34 @@ class _CrowdfundState extends State<Crowdfund> {
                         ),
                       ),
                     ),
-                    Container(
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1C1F1C),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 16.0, right: 18.0),
-                        child: Row(
-                          children: [
-                            Image(image: AssetImage('assets/icons/add_white.png'), height: 20, width: 20),
-                            SizedBox(width: 6),
-                            Text('New initiative',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const AddCrowdfund()),
+                        );
+                      },
+                      child: Container(
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF1C1F1C),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 16.0, right: 18.0),
+                          child: Row(
+                            children: [
+                              Image(image: AssetImage('assets/icons/add_white.png'), height: 20, width: 20),
+                              SizedBox(width: 6),
+                              Text('New initiative',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

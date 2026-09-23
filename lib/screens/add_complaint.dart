@@ -43,16 +43,14 @@ class _AddComplaintState extends State<AddComplaint> {
 
     List<String> uploadedUrls = [];
 
-    // Loop through the selected images state
     for (File image in _selectedImages) {
       try {
         final uri = Uri.parse('https://api.cloudinary.com/v1_1/$cloudName/image/upload');
         final request = http.MultipartRequest('POST', uri);
 
-        // 1. Attach the unsigned preset
         request.fields['upload_preset'] = uploadPreset;
+        request.fields['folder'] = 'complaints';
 
-        // 2. Attach the image file
         request.files.add(
           await http.MultipartFile.fromPath('file', image.path),
         );
@@ -127,6 +125,7 @@ class _AddComplaintState extends State<AddComplaint> {
         'userId': user?.uid ?? 'anonymous',
         'status': 'Pending',
         'createdAt': FieldValue.serverTimestamp(),
+        'voteCount' : 0,
       });
 
       if (mounted) {

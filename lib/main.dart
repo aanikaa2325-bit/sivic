@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/auth_gate.dart';
+import 'package:sivic/screens/add_crowdfund.dart';
 import 'package:sivic/screens/add_poll.dart';
 import 'package:sivic/screens/login_page.dart';
 
@@ -63,7 +64,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: AuthGate(),
+      home: AddCrowdfund(),
     );
   }
 }
