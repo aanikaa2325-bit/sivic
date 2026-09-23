@@ -43,7 +43,7 @@ class _PollCardState extends State<PollCard> {
     }
 
     final int days = duration.inDays;
-    final int hours = duration.inHours % 24; // Use modulo to get remaining hours after days
+    final int hours = duration.inHours % 24;
 
     return 'Poll ends in ${days}d ${hours}h';
   }

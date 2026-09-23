@@ -151,7 +151,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 14),
-                //Complaint Container
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -311,7 +310,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 8),
-                //Budget Container
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,

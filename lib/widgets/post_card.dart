@@ -96,7 +96,7 @@ class PostCard extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                               border: Border.all(color: Color(0xFFDFE6DF), width: 1.25),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(9),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4.0),
@@ -111,11 +111,11 @@ class PostCard extends StatelessWidget {
                           SizedBox(width: 4),
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(9),
                               color: _getAccentColor(progressStatus),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.only(top: 4, left: 10, right: 10, bottom: 4),
+                              padding: const EdgeInsets.only(top: 5, left: 10, right: 10, bottom: 5),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [

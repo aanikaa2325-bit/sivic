@@ -32,7 +32,7 @@ class _ComplaintsState extends State<Complaints> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('My Complaints',
+                    Text('My  Posts',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -84,7 +84,7 @@ class _ComplaintsState extends State<Complaints> {
                             _selectedTabIndex = 0;
                           });
                         },
-                        child: FeedTab(name: 'Active', selected: _selectedTabIndex == 0 ? true : false),
+                        child: FeedTab(name: 'All posts', selected: _selectedTabIndex == 0 ? true : false),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -92,7 +92,7 @@ class _ComplaintsState extends State<Complaints> {
                             _selectedTabIndex = 1;
                           });
                         },
-                        child: FeedTab(name: 'Under review', selected: _selectedTabIndex == 1 ? true : false),
+                        child: FeedTab(name: 'Complaints', selected: _selectedTabIndex == 1 ? true : false),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -100,7 +100,7 @@ class _ComplaintsState extends State<Complaints> {
                             _selectedTabIndex = 2;
                           });
                         },
-                        child: FeedTab(name: 'Resolved', selected: _selectedTabIndex == 2 ? true : false),
+                        child: FeedTab(name: 'Polls', selected: _selectedTabIndex == 2 ? true : false),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -108,7 +108,7 @@ class _ComplaintsState extends State<Complaints> {
                             _selectedTabIndex = 3;
                           });
                         },
-                        child: FeedTab(name: 'Completed', selected: _selectedTabIndex == 3 ? true : false),
+                        child: FeedTab(name: 'Crowdfunds', selected: _selectedTabIndex == 3 ? true : false),
                       ),
                     ],
                   ),
@@ -192,7 +192,7 @@ class _ComplaintsState extends State<Complaints> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image(image: AssetImage('assets/icons/add_white.png'), height: 20, width: 20),
-                Text('New Complaint',
+                Text('New post',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

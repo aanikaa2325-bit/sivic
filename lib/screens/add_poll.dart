@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
+import 'package:dotted_border/dotted_border.dart';
 
-class NewPost extends StatelessWidget {
-  const NewPost({super.key});
+
+class AddPoll extends StatefulWidget {
+  const AddPoll({super.key});
+
+  @override
+  State<AddPoll> createState() => _AddPollState();
+}
+
+class _AddPollState extends State<AddPoll> {
+
+  bool _addOption = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +33,7 @@ class NewPost extends StatelessWidget {
           ),
           padding: const EdgeInsets.only(left: 16),
         ),
-        title: const Text('New post',
+        title: const Text('Create poll',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w600,
@@ -34,159 +44,101 @@ class NewPost extends StatelessWidget {
       body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              spacing: 4,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(height: 4),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const AddComplaint()),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0, top: 18.0, right: 14.0, bottom: 18.0),
-                      child: Row (
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image(image: AssetImage('assets/icons/complaint_add.png'), height: 24, width: 24),
-                              SizedBox(width: 12),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Complaint',
-                                    style: TextStyle(
-                                      color: Color(0xFF333733),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 2),
-                                  Text('Report local issues that need attention',
-                                    style: TextStyle(
-                                      color: Color(0xFF848D84),
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Image(image: AssetImage('assets/icons/right_arrow_dark.png'), height: 24, width: 24),
-                        ],
+            child: Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: TextFormField(
+                      minLines: 1,
+                      maxLines: null,
+                      keyboardType: TextInputType.multiline,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF333733),
+                      ),
+                      cursorColor: Color(0xFF276F27),
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.zero,
+                        isDense: true,
+
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+
+                        hintText: 'What do you want to ask?',
+                        hintStyle: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFFBEC4BE),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const AddComplaint()),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                  SizedBox(height: 16),
+                  TextFormField(
+                    validator: (value) {
+                      if (value==null || value.isEmpty) return 'Title cannot be empty.';
+                      return null;
+                    },
+                    cursorColor: Color(0xFF4A8B4A),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0, top: 18.0, right: 14.0, bottom: 18.0),
-                      child: Row (
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image(image: AssetImage('assets/icons/poll_add.png'), height: 24, width: 24),
-                              SizedBox(width: 12),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Poll',
-                                    style: TextStyle(
-                                      color: Color(0xFF333733),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 2),
-                                  Text('Gather public opinions on local matters',
-                                    style: TextStyle(
-                                      color: Color(0xFF848D84),
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
+                    decoration: InputDecoration(
+                      hintText: 'Option 1',
+                    ),
+                  ),
+                  SizedBox(height: 6),
+                  TextFormField(
+                    validator: (value) {
+                      if (value==null || value.isEmpty) return 'Title cannot be empty.';
+                      return null;
+                    },
+                    cursorColor: Color(0xFF4A8B4A),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: 'Option 2',
+                    ),
+                  ),
+                  SizedBox(height: 6),
+                  DottedBorder(
+                    options: const RoundedRectDottedBorderOptions(
+                      color: Color(0xFFDFE6DF),
+                      strokeWidth: 2,
+                      dashPattern: [8, 8],
+                      radius: Radius.circular(18),
+                    ),
+                    child: SizedBox(
+                      height: 48,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                        child: Row(
+                          children: [
+                            Image(image: AssetImage('assets/icons/add_faded.png'), height: 20, width: 20),
+                            SizedBox(width: 8),
+                            Text('Add an option',
+                              style: TextStyle(
+                                color: Color(0xFFB8BEB8),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
                               ),
-                            ],
-                          ),
-                          Image(image: AssetImage('assets/icons/right_arrow_dark.png'), height: 24, width: 24),
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const AddComplaint()),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0, top: 18.0, right: 14.0, bottom: 18.0),
-                      child: Row (
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image(image: AssetImage('assets/icons/crowdfund_add.png'), height: 24, width: 24),
-                              SizedBox(width: 12),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Crowdfunding',
-                                    style: TextStyle(
-                                      color: Color(0xFF333733),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 2),
-                                  Text('Raise money for community projects',
-                                    style: TextStyle(
-                                      color: Color(0xFF848D84),
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Image(image: AssetImage('assets/icons/right_arrow_dark.png'), height: 24, width: 24),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           )
       ),

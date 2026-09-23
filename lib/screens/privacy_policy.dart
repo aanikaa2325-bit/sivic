@@ -62,8 +62,9 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
       body: SizedBox.expand(
         child: SafeArea(
           child: SingleChildScrollView(
-            controller: _scrollController, // 4. CONTROLLER ATTACHED HERE
-            // 5. REMOVED THE 'Expanded' WIDGET THAT WAS CAUSING A LAYOUT CRASH
+            controller: _scrollController,
+
+
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
@@ -343,7 +344,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                           ),
                         ),
                         const SizedBox(height: 28),
-                        const Text('3.  Information Sharing and Disclosure', // Fixed numbering here
+                        const Text('3.  Information Sharing and Disclosure',
                           style: TextStyle(
                             height: 1.6,
                             fontSize: 14,

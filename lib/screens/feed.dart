@@ -24,7 +24,7 @@ class _FeedState extends State<Feed> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 28),
+            SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
@@ -43,7 +43,7 @@ class _FeedState extends State<Feed> {
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(14),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
@@ -56,17 +56,17 @@ class _FeedState extends State<Feed> {
                                   });
                                 },
                                 child: Container(
-                                  height: 32,
-                                  width: 32,
+                                  height: 40,
+                                  width: 40,
                                   decoration: BoxDecoration(
                                     color: _selectedIndex == 0 ? Color(0xFFF5F6F5) : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Center(
                                     child: Image(image: AssetImage(
                                         _selectedIndex == 0 ? 'assets/icons/post_view_active.png' : 'assets/icons/post_view_inactive.png'),
-                                        height: 24,
-                                        width: 24
+                                        height: 28,
+                                        width: 28,
                                     ),
                                   ),
                                 ),
@@ -78,17 +78,17 @@ class _FeedState extends State<Feed> {
                                   });
                                 },
                                 child: Container(
-                                  height: 32,
-                                  width: 32,
+                                  height: 40,
+                                  width: 40,
                                   decoration: BoxDecoration(
                                     color: _selectedIndex == 1 ? Color(0xFFF5F6F5) : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Center(
                                     child: Image(image: AssetImage(
                                         _selectedIndex == 1 ? 'assets/icons/map_view_active.png' : 'assets/icons/map_view_inactive.png')
-                                        , height: 24,
-                                        width: 24
+                                        , height: 28,
+                                        width: 28,
                                     ),
                                   ),
                                 ),
@@ -103,16 +103,16 @@ class _FeedState extends State<Feed> {
                     children: [
                       Image(image:
                       AssetImage('assets/icons/notification.png'),
-                        height: 30,
-                        width: 30,
+                        height: 36,
+                        width: 36,
                       ),
 
                       Positioned(
                         right:  0,
                         top: 0,
                         child: Container(
-                          width: 15,
-                          height: 15,
+                          width: 20,
+                          height: 20,
                           decoration: BoxDecoration(
                             color: Color(0xFFC0F686),
                             shape: BoxShape.circle,
@@ -121,8 +121,9 @@ class _FeedState extends State<Feed> {
                             child: Text(
                               '$notificationCount',
                               style: TextStyle(
+                                fontWeight: FontWeight.w500,
                                 color: Color(0xFF333733),
-                                fontSize: 10,
+                                fontSize: 11,
                               ),
                             ),
                           ),

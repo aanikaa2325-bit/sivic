@@ -139,7 +139,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
                         ),
                         const SizedBox(height: 18),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Added alignment
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('1 . 1  Complaint Reporting: ',
                               style: TextStyle(
@@ -172,7 +172,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
                         ),
                         const SizedBox(height: 10),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Added alignment
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('1 . 2  Budget Transparency: ',
                               style: TextStyle(
@@ -206,7 +206,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
                         ),
                         const SizedBox(height: 10),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Added alignment
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('1 . 3  Public Polls: ',
                               style: TextStyle(
@@ -240,7 +240,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
                         ),
                         const SizedBox(height: 10),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Added alignment
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('1 . 4  Crowdfunding: ',
                               style: TextStyle(
