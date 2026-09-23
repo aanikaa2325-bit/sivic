@@ -64,7 +64,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: AddCrowdfund(),
+      home: AuthGate(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/navigation_menu.dart';
+import 'package:sivic/screens/feed.dart';
 import 'package:sivic/widgets/activity.dart';
 import 'package:sivic/widgets/budget_progress_bar.dart';
 import 'package:sivic/screens/profile.dart';
@@ -403,12 +404,20 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(
-                        'See all', style: TextStyle(
-                        color: Color(0xFF276F27),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => const NavigationMenu(initialIndex: 2)),
+                          );
+                        },
+                        child: Text(
+                          'See all', style: TextStyle(
+                          color: Color(0xFF276F27),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        ),
                       ),
                     ],
                   ),
