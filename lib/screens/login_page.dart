@@ -3,6 +3,9 @@ import 'package:sivic/screens/enter_password.dart';
 import 'package:sivic/screens/privacy_policy.dart';
 import 'package:sivic/screens/signup_page.dart';
 import 'package:sivic/screens/terms_of_use.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final firebase = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,6 +15,27 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  final _formKey = GlobalKey<FormState>();
+
+  var _enteredEmail = '';
+
+  void _submit(){
+    final isValid = _formKey.currentState!.validate();
+
+    if (!isValid) {
+      return;
+    }
+    _formKey.currentState!.save();
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EnterPassword(email: _enteredEmail),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -119,14 +143,27 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: TextField(
-                      cursorColor: Color(0xFF4A8B4A),
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: 'Enter email or phone',
+                    child: Form(
+                      key: _formKey,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.trim().isEmpty || !value.contains('@')){
+                            return 'Invalid email address';
+                          }
+
+                          return null;
+                        },
+                        onSaved: (value){
+                          _enteredEmail = value!;
+                        },
+                        cursorColor: Color(0xFF4A8B4A),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: 'Enter email or phone',
+                        ),
                       ),
                     ),
                   ),
@@ -136,14 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: SizedBox(
                       height: 56,
                       child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const EnterPassword(),
-                            ),
-                          );
-                        },
+                        onTap: _submit,
                         child: Container(
                           padding: EdgeInsets.all(16),
                           decoration: BoxDecoration(

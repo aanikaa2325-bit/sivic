@@ -83,7 +83,6 @@ class _SignupPageState extends State<SignupPage> {
       if (mounted) {
         setState(() => _isLoading = false);
 
-        // 3. Go to OTP page
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -146,7 +145,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 32),
 
-                  // --- First Name & Last Name ---
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +198,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // --- National ID ---
                   const Padding(
                     padding: EdgeInsets.only(left: 4.0),
                     child: Text('National ID', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFF333733))),
@@ -219,7 +216,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // --- Phone ---
                   const Padding(
                     padding: EdgeInsets.only(left: 4.0),
                     child: Text('Phone', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFF333733))),
@@ -238,7 +234,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // --- Email ---
                   const Padding(
                     padding: EdgeInsets.only(left: 4.0),
                     child: Text('Email', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFF333733))),
@@ -258,7 +253,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // --- Password ---
                   const Padding(
                     padding: EdgeInsets.only(left: 4.0),
                     child: Text('Password', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFF333733))),
@@ -291,7 +285,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  // --- Confirm Password ---
                   const Padding(
                     padding: EdgeInsets.only(left: 4.0),
                     child: Text('Confirm Password', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFF333733))),
@@ -323,7 +316,6 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
 
-                  // --- Firebase Error Display ---
                   if (_firebaseErrorMessage != null) ...[
                     const SizedBox(height: 16),
                     Padding(
@@ -337,7 +329,6 @@ class _SignupPageState extends State<SignupPage> {
 
                   const SizedBox(height: 24),
 
-                  // --- Submit Button ---
                   InkWell(
                     onTap: _isLoading ? null : _submit,
                     child: Container(
