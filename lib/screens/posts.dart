@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sivic/screens/add_complaint.dart';
+import 'package:sivic/screens/new_post.dart';
 import 'package:sivic/widgets/feed_tab.dart';
 import 'package:sivic/widgets/activity.dart';
 import 'package:sivic/screens/complaint_page.dart';
@@ -7,14 +7,14 @@ import 'package:sivic/screens/complaint_page.dart';
 
 
 
-class Complaints extends StatefulWidget {
-  const Complaints({super.key});
+class Posts extends StatefulWidget {
+  const Posts({super.key});
 
   @override
-  State<Complaints> createState() => _ComplaintsState();
+  State<Posts> createState() => _PostsState();
 }
 
-class _ComplaintsState extends State<Complaints> {
+class _PostsState extends State<Posts> {
   int notificationCount = 3;
   int _selectedTabIndex = 0;
 
@@ -175,7 +175,7 @@ class _ComplaintsState extends State<Complaints> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const AddComplaint(),
+              builder: (context) => const NewPost(),
             ),
           );
         },

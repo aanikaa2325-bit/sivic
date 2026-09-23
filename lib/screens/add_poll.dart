@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:sivic/navigation_menu.dart';
+
 
 
 class AddPoll extends StatefulWidget {
@@ -16,6 +19,7 @@ class _AddPollState extends State<AddPoll> {
   bool _addOption3 = false;
   bool _addOption4 = false;
 
+  final TextEditingController _questionController = TextEditingController();
   final TextEditingController _option1Controller = TextEditingController();
   final TextEditingController _option2Controller = TextEditingController();
   final TextEditingController _option3Controller = TextEditingController();
@@ -23,12 +27,83 @@ class _AddPollState extends State<AddPoll> {
 
   @override
   void dispose() {
+    _questionController.dispose();
     _option1Controller.dispose();
     _option2Controller.dispose();
     _option3Controller.dispose();
     _option4Controller.dispose();
 
     super.dispose();
+  }
+
+  Future<void> _submitPoll() async {
+    final question = _questionController.text.trim();
+    final opt1 = _option1Controller.text.trim();
+    final opt2 = _option2Controller.text.trim();
+    final opt3 = _option3Controller.text.trim();
+    final opt4 = _option4Controller.text.trim();
+
+    if (question.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter a question.')),
+      );
+      return;
+    }
+
+    if (opt1.isEmpty || opt2.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter at least two options.')),
+      );
+      return;
+    }
+
+    // 2. Build the options list
+    List<Map<String, dynamic>> options = [
+      {'text': opt1, 'votes': 0},
+      {'text': opt2, 'votes': 0},
+    ];
+
+    if (_addOption3 && opt3.isNotEmpty) {
+      options.add({'text': opt3, 'votes': 0});
+    }
+
+    if (_addOption4 && opt4.isNotEmpty) {
+      options.add({'text': opt4, 'votes': 0});
+    }
+
+    setState(() => _isUploading = true);
+
+    try {
+      // 3. Upload to Firestore
+      await FirebaseFirestore.instance.collection('polls').add({
+        'question': question,
+        'options': options,
+        'totalVotes': 0,
+        'votedUserIds': [],
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Poll created successfully!')),
+      );
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const NavigationMenu()),
+      );
+
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to create poll: $e')),
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isUploading = false);
+      }
+    }
   }
 
   @override
@@ -71,6 +146,7 @@ class _AddPollState extends State<AddPoll> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: TextFormField(
+                          controller: _questionController,
                           minLines: 1,
                           maxLines: null,
                           keyboardType: TextInputType.multiline,
@@ -202,6 +278,7 @@ class _AddPollState extends State<AddPoll> {
                       SizedBox(
                         height: 56,
                         child: InkWell(
+                          onTap: _submitPoll,
                           child: Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
@@ -219,7 +296,7 @@ class _AddPollState extends State<AddPoll> {
                                 ),
                               )
                                   : const Text(
-                                'Submit complaint',
+                                'Create poll',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500,

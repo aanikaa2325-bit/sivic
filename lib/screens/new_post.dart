@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/screens/add_complaint.dart';
+import 'package:sivic/screens/add_poll.dart';
 
 class NewPost extends StatelessWidget {
   const NewPost({super.key});
@@ -92,7 +93,7 @@ class NewPost extends StatelessWidget {
                   onTap: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AddComplaint()),
+                      MaterialPageRoute(builder: (context) => const AddPoll()),
                     );
                   },
                   child: Container(
@@ -141,7 +142,7 @@ class NewPost extends StatelessWidget {
                   onTap: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AddComplaint()),
+                      MaterialPageRoute(builder: (context) => const AddPoll()),
                     );
                   },
                   child: Container(

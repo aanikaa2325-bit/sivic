@@ -63,7 +63,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: AddPoll(),
+      home: AuthGate(),
     );
   }
 }
