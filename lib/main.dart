@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sivic/auth_gate.dart';
+import 'package:sivic/screens/add_poll.dart';
 import 'package:sivic/screens/login_page.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:sivic/screens/new_post.dart';
 import 'package:sivic/screens/signup_page.dart';
 import 'firebase_options.dart';
 
@@ -61,7 +63,7 @@ class Sivic extends StatelessWidget {
             ),
           )
       ),
-      home: AuthGate(),
+      home: AddPoll(),
     );
   }
 }

@@ -83,8 +83,8 @@ class _NavigationMenuState extends State<NavigationMenu> {
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Image.asset('assets/icons/complaint.png', width: 24, height: 24),
-              label: 'Complaints',
+              icon: Image.asset('assets/icons/post.png', width: 24, height: 24),
+              label: 'Posts',
             ),
             NavigationDestination(
               icon: Image.asset('assets/icons/feed.png', width: 24, height: 24),
