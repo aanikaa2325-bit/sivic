@@ -7,10 +7,12 @@ import 'package:sivic/widgets/otp.dart';
 
 class OtpPage extends StatefulWidget {
   final bool isFromForgotPassword;
+  final Map<String, dynamic>? userData;
 
   const OtpPage({
     Key? key,
-    this.isFromForgotPassword = false,
+    required this.isFromForgotPassword,
+    this.userData,
   }) : super(key: key);
   
   @override
@@ -59,7 +61,7 @@ class _OtpPageState extends State<OtpPage> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    Text('We sent an OTP to an*****64@gmail.com. Enter the OTP to verify your account',
+                    Text('We sent an OTP to ${widget.userData!['lastName']}. Enter the OTP to verify your account',
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14 ,
