@@ -198,6 +198,7 @@ class _AddCrowdfundState extends State<AddCrowdfund> {
                   ),
                   SizedBox(height: 8),
                   TextFormField(
+                    controller: _titleController,
                     validator: (value) {
                       if (value==null || value.isEmpty) return 'Title cannot be empty.';
                       return null;
@@ -227,6 +228,7 @@ class _AddCrowdfundState extends State<AddCrowdfund> {
                   SizedBox(
                     height: 112,
                     child: TextFormField(
+                      controller: _descController,
                       maxLines: null,
                       expands: true,
                       keyboardType: TextInputType.multiline,
@@ -355,6 +357,7 @@ class _AddCrowdfundState extends State<AddCrowdfund> {
                   ),
                   SizedBox(height: 8),
                   TextFormField(
+                    controller: _locationController,
                     validator: (value) {
                       if (value == null || value.isEmpty) return 'Location must be attached with project';
                       return null;
@@ -385,6 +388,7 @@ class _AddCrowdfundState extends State<AddCrowdfund> {
                   ),
                   SizedBox(height: 8),
                   TextFormField(
+                    controller: _goalController,
                     validator: (value) {
                       if (value == null || value.isEmpty) return 'Amount field cannot be empty';
                       return null;

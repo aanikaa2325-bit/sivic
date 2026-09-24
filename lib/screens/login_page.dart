@@ -4,6 +4,8 @@ import 'package:sivic/screens/privacy_policy.dart';
 import 'package:sivic/screens/signup_page.dart';
 import 'package:sivic/screens/terms_of_use.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sivic/navigation_menu.dart';
 
 final firebase = FirebaseAuth.instance;
 
@@ -34,6 +36,43 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context) => EnterPassword(email: _enteredEmail),
       ),
     );
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser == null) {
+        return;
+      }
+
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+      final OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      final UserCredential userCredential = await firebase.signInWithCredential(credential);
+
+      if (userCredential.user != null && mounted) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const NavigationMenu(),
+          ),
+              (route) => false,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Successfully signed in with Google!')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to sign in with Google: $e')),
+        );
+      }
+    }
   }
 
 
@@ -78,33 +117,36 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 56),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: SizedBox(
-                      height: 56,
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(
-                            color: Color(0xFFDFE6DF),
-                          )
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              'assets/images/google.png',
-                              width: 24,
-                              height: 24,
-                            ),
-                            SizedBox(width: 88),
-                            Text('Sign in with Google',
-                              style: TextStyle(
-                                color: Color(0xFF303230),
-                                fontWeight: FontWeight.w500,
+                    child: InkWell(
+                      onTap: _signInWithGoogle,
+                      child: SizedBox(
+                        height: 56,
+                        child: Container(
+                          padding: EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFFFFFF),
+                            borderRadius: BorderRadius.circular(18),
+                            border: Border.all(
+                              color: Color(0xFFDFE6DF),
+                            )
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                'assets/images/google.png',
+                                width: 24,
+                                height: 24,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 88),
+                              Text('Sign in with Google',
+                                style: TextStyle(
+                                  color: Color(0xFF303230),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

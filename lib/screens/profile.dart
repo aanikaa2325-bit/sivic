@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:sivic/auth_gate.dart';
 
 
 class Profile extends StatefulWidget {
@@ -17,6 +18,21 @@ class _ProfileState extends State<Profile> {
   String nid = '';
 
   bool isLoading = true;
+
+  Future<void> _logOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+
+      if (mounted) {
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (context) => const AuthGate()),
+              (route) => false, // false means remove all previous routes
+        );
+      }
+    } catch (e) {
+      print("Error signing out: $e");
+    }
+  }
 
   @override
   void initState() {
@@ -257,7 +273,46 @@ class _ProfileState extends State<Profile> {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 36),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: InkWell(
+                  onTap: _logOut,
+                  child: Container(
+                    height: 44,
+                    width: 124,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: const Color(0xFFEA4335),
+                    ),
+                    child: Center(
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image(image:AssetImage(
+                                'assets/icons/logout.png'),
+                              height: 16,
+                              width: 16,
+                            ),
+                            SizedBox(width: 8),
+                            Expanded(
+                              child: Text('Logout',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
